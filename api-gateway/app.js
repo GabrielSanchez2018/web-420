@@ -1,3 +1,10 @@
+/* 
+Author: Richard Krasso
+Date: 10/26/2019
+Edited by: Gabriel Sanchez 
+*/
+
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -5,7 +12,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-
+// For the api-catalog routes 1.4
+var apiCatalog = require('./routes/api-catalog');
 
 var app = express();
 
@@ -20,7 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-
+// Registering the API Catolog routes
+app.use('/api', apiCatalog);
 // Connection to MongoDB
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
@@ -47,3 +56,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+// npm run devstart
