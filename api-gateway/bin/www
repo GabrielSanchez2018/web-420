@@ -2,7 +2,12 @@
 var config = require('../config');
 /**
  * Module dependencies.
- */
+ * /*
+Author: Richard Krasso
+Date: 10/26/2019
+Edited by: Gabriel Sanchez 
+*/
+ 
 
 var app = require('../app');
 var debug = require('debug')('api-gateway:server');
