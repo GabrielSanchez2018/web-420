@@ -35,7 +35,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 //Data connection\
-mongoose.connect("mongodb+srv://admin:admin@cluster0-djivq.gcp.mongodb.net/test?retryWrites=true",{
+mongoose.connect("mongodb+srv://admin:admin@cluster0-djivq.gcp.mongodb.net/api-gateway?retryWrites=true",{ //gabrielsanchezserna@outlook.com account. 
   promiseLibrary: require('bluebird')
 }).then (()=> console.log('connection successful'))
 .catch((err) => console.error(err));
