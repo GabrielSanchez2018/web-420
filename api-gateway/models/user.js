@@ -24,6 +24,14 @@ module.exports.add = (user, callback) => {
     user.save(callback);
 };
 
+//Open the user.js file and add a new query for finding individual users by email address
+// a. user.js
+// Week - 6 Assignment 6.3
+module.exports.getOne = (e, callback) =>{
+    var query = {email: e};
+    User.findOne(query, callback);
+};
+
 //getById
 module.exports.getById = (id, callback) => {
     var query = {_id: id};
